@@ -1,0 +1,18 @@
+<form #myForm="ngForm"  (ngSubmit)="saveEmployee(myForm.value)">
+    <div>
+        <label for name="firstName"><b>FirstName</b></label>
+        <input type="text" #firstName name="firstName" ngModel>
+    </div>
+<br><br>
+<div>
+    <label for name="lastName"><b>LastName</b></label>
+    <input type="text" #lastName name="lastName" ngModel>
+</div>
+<br><br>
+<div>
+    <label for name="email"><b>Email</b></label>
+    <input type="email" #email name="email" ngModel>
+</div>
+<br><br>
+<button type="submit" value="{{editMode ?'Edit Employee':'Add Employee'}}">Submit</button>
+</form>

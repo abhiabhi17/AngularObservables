@@ -1,0 +1,46 @@
+<div class="main-area">
+  <div class="content-area">
+    <div class="header">
+      <h1>Manage Products</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="container">
+    <h3>Create Product</h3>
+    <form #myForm="ngForm" (ngSubmit)="saveEmployee(myForm.value)">
+      <label>FirstNamee:</label>
+      <input type="text" name="firstName" ngModel>
+ <br><br>
+      <label>LastName</label>
+      <input type="text" name="lastName" ngModel>
+      <br><br>
+      <label>Email</label>
+      <input type="email" name="email" ngModel>
+      <br><br>
+      <input type="submit" value="{{editMode ? 'Edit Employee  ': ' Add Employee'}}">
+      <br><br>
+    </form>
+  </div>
+
+  <button type="button" (click)="getAllEmployees()">Fetch</button>
+  <div >
+  
+      <table class="table">
+          <tr>
+              <th>Id</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+          </tr>
+       
+        <tr *ngFor="let emp of allProducts">
+          <td>{{emp.id}}</td>
+          <td>{{emp.firstName}}</td>
+          <td>{{emp.lastName}}</td>
+          <td>{{emp.email}}</td>
+          <button class="btn-delete" (click)="deleteEmployee(emp.id)">Delete Product</button>
+        <button class="btn-delete" (click)="onupdateEmployee(emp.id)">Edit Product</button>
+          
+        </tr>
+      </table>
+    </div>
